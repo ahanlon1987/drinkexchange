@@ -8,3 +8,4 @@ source/dx-ticker/.gradle
 *.exe
 *.log
 *.bin
+jquery-1.9.1.js
