@@ -1,6 +1,6 @@
 package com.dx.service;
 
-import com.dx.data.ReadDAO;
+import com.dx.data.OrderDAO;
 import com.dx.util.WrapperUtil;
 import com.dx.view.Order;
 import org.json.JSONObject;
@@ -18,13 +18,13 @@ public class OrderServiceImpl implements OrderService {
     private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
 
     @Autowired
-    private ReadDAO readDAO;
+    private OrderDAO orderDAO;
 
 
     public List<Order> findAll() throws Exception {
 
         List<Order> orders = new ArrayList<Order>();
-        List<JSONObject> allOrders = this.getReadDAO().findAll();
+        List<JSONObject> allOrders = this.getOrderDAO().findAll();
 
         if(allOrders != null) {
             System.out.println("allOrders is not null, found: " + allOrders.size() + " orders.");
@@ -45,7 +45,7 @@ public class OrderServiceImpl implements OrderService {
             throw new Exception("id cannot be null");
         }
 
-        JSONObject orderModel = this.getReadDAO().findById(id);
+        JSONObject orderModel = this.getOrderDAO().findById(id);
         if(orderModel != null) {
             System.out.println("Order with id: " + id + ", was found, returning.");
         } else {
@@ -62,15 +62,15 @@ public class OrderServiceImpl implements OrderService {
     }
 
 
+    public OrderDAO getOrderDAO() throws Exception {
+         if(orderDAO == null) {
+             throw new Exception("orderDAO must not be null.");
+         }
+         return orderDAO;
+     }
 
-    public ReadDAO getReadDAO() throws Exception {
-        if(readDAO == null) {
-            throw new Exception("ReadDAO must not be null.");
-        }
-        return readDAO;
-    }
+     public void setOrderDAO(OrderDAO orderDAO) {
+         this.orderDAO= orderDAO;
+     }
 
-    public void setReadDAO(ReadDAO readDAO) {
-        this.readDAO = readDAO;
-    }
 }

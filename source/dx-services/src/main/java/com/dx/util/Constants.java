@@ -7,6 +7,6 @@ public final class Constants {
     }
 
     public static final String ORDER_ID = "orderId";
-
+    public static final String MENU_ITEM_ID = "menuItemId";
 
 }

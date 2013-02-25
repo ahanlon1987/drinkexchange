@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.net.UnknownHostException;
 import java.util.List;
 
-public interface ReadDAO {
+public interface OrderDAO {
 
     public List<JSONObject> findAll() throws UnknownHostException, JSONException;
 

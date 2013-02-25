@@ -9,8 +9,8 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository("ReadDAO")
-public abstract class ReadDAOImpl implements ReadDAO {
+@Repository("OrderDAO")
+public class OrderDAOImpl implements OrderDAO {
 
 
     public List<JSONObject> findAll() throws UnknownHostException, JSONException {

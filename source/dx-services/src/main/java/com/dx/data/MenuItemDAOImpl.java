@@ -9,8 +9,8 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository("ReadDAO")
-public abstract class ReadDAOImpl implements ReadDAO {
+@Repository("MenuItemDAO")
+public class MenuItemDAOImpl implements MenuItemDAO {
 
 
     public List<JSONObject> findAll() throws UnknownHostException, JSONException {
@@ -18,7 +18,7 @@ public abstract class ReadDAOImpl implements ReadDAO {
         MongoClient mongoClinet = new MongoClient("localhost", 27017);
         DB db = mongoClinet.getDB("test");
 
-        DBCollection coll = db.getCollection("orders");
+        DBCollection coll = db.getCollection("menuItems");
         DBCursor cursor = coll.find();
 
         List<JSONObject> collectionObjects = new ArrayList<JSONObject>();
