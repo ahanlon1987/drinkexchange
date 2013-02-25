@@ -1,0 +1,9 @@
+build
+docs
+source/out
+source/.idea
+source/dx-services/.gradle
+*.class
+*.exe
+*.log
+*.bin
