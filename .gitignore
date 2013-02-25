@@ -3,6 +3,7 @@ docs
 source/out
 source/.idea
 source/dx-services/.gradle
+source/dx-ticker/.gradle
 *.class
 *.exe
 *.log
